@@ -7,8 +7,8 @@ import { makeStyles } from "@material-ui/core/styles"
 
 const styles = makeStyles({
     bar:{
-        paddingTop: "1.15rem",
-        backgroundColor: "#fff",
+        paddingTop: 0,
+        backgroundColor: "#01507B",
         ['@media (max-width:780px)']: { 
            flexDirection: "column"
           }
@@ -28,9 +28,25 @@ const styles = makeStyles({
     },
     menuItem: {
         cursor: "pointer", 
+        color:"#fff",
+        flexGrow: 1,
+        textAlign:"center",
+        display:"inline-block",
+        float: "none",
+        "&:hover": {
+            color:  "#D98320"
+        },
+        ['@media (max-width:780px)']: { 
+            paddingBottom: "1rem"    }
+    },
+    mainItem:{
+        cursor: "pointer", 
+        color:"#fff",
+        fontSize:"1.5rem",
+        textAlign:"center",
         flexGrow: 1,
         "&:hover": {
-            color:  "#4f25c8"
+            color:  "#D98320"
         },
         ['@media (max-width:780px)']: { 
             paddingBottom: "1rem"    }
@@ -42,24 +58,25 @@ export default function NavBar() {
     const classes = styles()
     return (
         <Toolbar position="sticky" color="rgba(0, 0, 0, 0.87)" className={classes.bar}>
-            <img src={logo} className={classes.logo} />
-            <img src={logoMobile} className={classes.logoMobile} />
+            <Typography variant="h6" className={classes.mainItem}>
+                SOFT SKILLS ACADEMY MADRID
+            </Typography>
+
             <Typography variant="h6" className={classes.menuItem}>
-                About
+                TALLERES
             </Typography>
             <Typography variant="h6" className={classes.menuItem}>
-                Blog
+                HORARIO
             </Typography>
             <Typography variant="h6" className={classes.menuItem}>
-                Careers
+                TRAINERS
             </Typography>
             <Typography variant="h6" className={classes.menuItem}>
-                Demos
+                APUNTATE
             </Typography>
             <Typography variant="h6" className={classes.menuItem}>
-                Contact Us
+                CONÓCENOS
             </Typography>
-            <CustomBtn txt="Trial Our Product" />
         </Toolbar>
     )
 }
